@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta name="description" content="موقع رمضان 2025 يعرفك بتواريخ بدء شهر رمضان، ومواقيت الصلاة، وغيرها من المعلومات الهامة عن رمضان.">
+    <meta name="keywords" content="رمضان 2025, تاريخ رمضان, مواقيت الصلاة, رمضان كريم">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> رمضان 2025 </title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
+
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "name": "موقع رمضان 2025",
+          "url": "https://example.com",
+          "description": "موقع رمضان 2025 يعرض تواريخ ومواقيت الصلاة للمسلمين"
+        }
+        </script>
+
+
+   
+    <style>
+        body {
+            font-family: 'Arial', 'Tahoma', sans-serif; /* استخدم خط يدعم اللغة العربية */
+            direction: rtl; /* لضبط اتجاه النصوص إلى اليمين */
+            text-align: center; /* لجعل النصوص محاذاة لليمين */
+           
+            line-height: 1.6; /* لجعل النصوص أكثر قابلية للقراءة */
+        }
+      
+    </style>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            text-align: center;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+      
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        #current-date {
+            color: #c71096;
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            text-align: center;
+            background-color: #f3f3f3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+       
+        #countdown {
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.5em;
+        }
+        .time {
+            text-align: center;
+        }
+        .time span {
+            display: block;
+            font-size: 2em;
+            color: #4a2c82;
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            text-align: center;
+            background-color: #f3f3f3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            z-index: 0;
+        }
+
+        #prayer-times-section {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #prayer-times-section h2 {
+            color: #4a2c82;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .prayer-times {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .prayer {
+            flex: 1 1 200px;
+            margin: 10px;
+            background: #f7f7f7;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .prayer i {
+            font-size: 2em;
+           
+            margin-bottom: 10px;
+        }
+
+        .prayer p {
+            font-size: 1.2em;
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .prayer span {
+            display: block;
+            font-size: 1.4em;
+            font-weight: bold;
+            
+        }
+
+        #daily-dua {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #daily-dua h2 {
+           
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        #dua-text {
+            font-size: 1.5em;
+            font-weight: bold;
+           
+        }
+
+        #quran-plan {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #quran-plan h2 {
+            margin-bottom: 20px;
+            color: #4a2c82;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4a2c82;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #days-input {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4a2c82;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4a2c82;
+        }
+         /* الصورة المتساقطة */
+        .falling-image {
+            position: absolute;
+            top: -100px;
+            opacity: 0.5; /* جعل الصور أكثر شفافية */
+            animation: fall linear infinite;
+            pointer-events: none; /* لكي لا تعيق التفاعل مع العناصر */
+        }
+
+        /* التأثيرات المدهشة لتساقط الصورة */
+        @keyframes fall {
+            0% {
+                top: -100px; /* تبدأ الصورة من خارج الشاشة في الأعلى */
+                left: calc(100% * random); /* وضع الصورة في مكان عشوائي أفقي */
+            }
+            100% {
+                top: 100vh; /* تنزل الصورة إلى أسفل الصفحة */
+            }
+        }
+
+        /* تحديد الطول و العرض لكل صورة */
+        .falling-image img {
+            width: 40px; /* حجم أصغر للصورة */
+            height: auto;
+        }
+
+        /* تصميم المحتوى داخل الصفحة ليبقى في المقدمة */
+        .content {
+            position: relative;
+            z-index: 10;
+            color: white;
+            text-align: center;
+            margin-top: 200px; /* رفع النص عن الصورة */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">رمضان <i class="fas fa-moon"></i></div>
+            <ul class="nav-links">
+                <li><a href="#countdown">العد التنازلي</a></li>
+                <li><a href="#daily-dua">دعاء اليوم</a></li>
+                <li><a href="#quran-plan">خطة القرآن</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <div class="container">
+        <h1>كم تبقى على رمضان؟</h1>
+        <div id="countdown">
+            <div class="time">
+                <span id="days">0</span>
+                <p>أيام</p>
+            </div>
+            <div class="time">
+                <span id="hours">0</span>
+                <p>ساعات</p>
+            </div>
+            <div class="time">
+                <span id="minutes">0</span>
+                <p>دقائق</p>
+            </div>
+            <div class="time">
+                <span id="seconds">0</span>
+                <p>ثواني</p>
+            </div>
+        </div>
+    </div>
+        
+
+    <div class="container">
+        <h1>التاريخ الحالي</h1>
+        <p id="date-info">التاريخ اليوم: <span id="current-date">جارٍ التحميل...</span></p>
+    </div>
+   <!--    <p id="prayer-times">أوقات الصلاة: <span id="prayers"></span></p>--> 
+
+        <section id="prayer-times-section">
+            <h2><i class="fas fa-clock"></i> أوقات الصلاة</h2>
+            <div class="prayer-times">
+                <div class="prayer">
+                    <i class="fas fa-cloud-moon"></i>
+                    <p>السحور</p>
+                    <span id="suhoor-time">05:00 AM</span>
+                </div>
+                <div class="prayer">
+                    <i class="fas fa-sun"></i>
+                    <p>الفجر</p>
+                    <span id="fajr-time">05:10 AM</span>
+                </div>
+                <div class="prayer">
+                    <i class="fas fa-sunset"></i>
+                    <p>الظهر</p>
+                    <span id="dhuhr-time">12:15 PM</span>
+                </div>
+                <div class="prayer">
+                    <i class="fas fa-cloud-sun"></i>
+                    <p>العصر</p>
+                    <span id="asr-time">03:45 PM</span>
+                </div>
+                <div class="prayer">
+                    <i class="fas fa-cloud-sun-rain"></i>
+                    <p>المغرب</p>
+                    <span id="maghrib-time">06:30 PM</span>
+                </div>
+                <div class="prayer">
+                    <i class="fas fa-cloud-moon"></i>
+                    <p>العشاء</p>
+                    <span id="isha-time">08:00 PM</span>
+                </div>
+            </div>
+        </section>
+
+        
+        <div id="daily-dua">
+            <h2><i class="fas fa-praying-hands"></i> دعاء اليوم</h2>
+            <p id="dua-text">جاري تحميل الدعاء...</p>
+        </div>
+
+
+
+
+
+      <div id="quran-plan">
+        <h2>خطة ختم القرآن</h2>
+        <label for="days-input">أدخل عدد الأيام:</label>
+        <input type="number" id="days-input" min="1" value="30">
+        <button onclick="generateQuranPlan()">إنشاء الخطة</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>اليوم</th>
+                    <th>الأجزاء</th>
+                    <th>من السورة</th>
+                    <th>إلى السورة</th>
+                </tr>
+            </thead>
+            <tbody id="plan-table-body"></tbody>
+        </table>
+    </div>
+    
+        
+        
+        <div id="monthly-progress">
+            <div id="progress-bar"></div>
+        </div>
+
+
+        <div class="container">
+            <!-- قسم كيف تعود إلى الصلاة -->
+            <div class="section">
+                <h2>كيف تعود إلى الصلاة؟</h2>
+                <p>الصلاة هي عماد الدين، وعودتك إليها خطوة نحو تحسين حياتك الروحية. إليك بعض النصائح:</p>
+                <ul>
+                    <li>حدد وقتًا ثابتًا يوميًا للصلاة.</li>
+                    <li>ابدأ تدريجيًا وأضف صلاة الليل إلى روتينك.</li>
+                    <li>استخدم الأذكار والدعاء لزيادة قربك من الله.</li>
+                    <li>تابع جدولًا للتأكد من أداء الصلاة في أوقاتها.</li>
+                </ul>
+            </div>
+    
+            <!-- قسم أفكار إسلامية للنجاح -->
+            <div class="section">
+                <h2>أفكار إسلامية للنجاح</h2>
+                <p>في الإسلام، النجاح يعتمد على النية والعمل. بعض الأفكار لتحقيق النجاح:</p>
+                <ul>
+                    <li><strong>الإخلاص:</strong> "إنما الأعمال بالنيات".</li>
+                    <li><strong>الاجتهاد:</strong> "وقل اعملوا فسيرى الله عملكم".</li>
+                    <li><strong>التوكل:</strong> ثق بالله بعد بذل الجهد.</li>
+                </ul>
+            </div>
+    
+            <!-- قسم أقوال إسلامية -->
+            <div class="section">
+                <h2>أقوال إسلامية</h2>
+                <p>من أقوال النبي صلى الله عليه وسلم:</p>
+                <blockquote>من لا يشكر الناس لا يشكر الله.</blockquote>
+                <blockquote>لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه.</blockquote>
+                <blockquote>من عمل صالحًا فلنفسه ومن أساء فعليها.</blockquote>
+            </div>
+    
+            <!-- قسم خطة حياة أفضل مع الإسلام -->
+            <div class="section">
+                <h2>خطة حياة أفضل مع الإسلام</h2>
+                <p>توجهات لتحسين حياتك وفق تعاليم الإسلام:</p>
+                <ul>
+                    <li><strong>الصلاة:</strong> اجعل الصلاة بداية يومك.</li>
+                    <li><strong>العمل الجاد:</strong> اجتهد في حياتك العملية.</li>
+                    <li><strong>الصحة:</strong> اهتم بتغذيتك وراحتك النفسية.</li>
+                    <li><strong>العلاقات:</strong> عزز الروابط الأسرية والاجتماعية.</li>
+                </ul>
+            </div>
+    
+            <!-- قسم النشرة الدينية -->
+            <div class="section">
+                <h2>اشترك في النشرة الدينية</h2>
+                <form action="/subscribe" method="post">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك</button>
+                </form>
+            </div>
+<br><br><br><br>
+
+         
+         </div>
+       
+
+
+         <footer>
+            <div class="logo">رمضان <span>كريم</span></div>
+          
+              <div class="links-column">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <p>جميع الحقوق محفوظة &copy; 2025 | موقع رمضان</p>
+          </footer>
+        
+
+        <button id="back-to-top" title="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
+
+      
+            
+    <script src="script.js"></script>
+    
+        
+</body>
+</html>
