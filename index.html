@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 
     <link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
@@ -280,17 +282,29 @@
     </style>
 </head>
 <body>
+  
+
+
     <header>
         <nav class="navbar">
-            <div class="logo">رمضان <i class="fas fa-moon"></i></div>
-            <ul class="nav-links">
-                <li><a href="#countdown">العد التنازلي</a></li>
-                <li><a href="#daily-dua">دعاء اليوم</a></li>
-                <li><a href="#quran-plan">خطة القرآن</a></li>
-               
-            </ul>
+          <div class="logo">
+            رمضان <i class="fas fa-moon"></i>
+          </div>
+          <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links">
+            <li><a href="#countdown">العد التنازلي</a></li>
+            <li><a href="#daily-dua">دعاء اليوم</a></li>
+            <li><a href="#quran-plan">خطة القرآن</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
+      
+      
+      
     
     
     <div class="container">
@@ -367,24 +381,22 @@
 
 
 
-
-      <div id="quran-plan">
-        <h2>خطة ختم القرآن</h2>
-        <label for="days-input">أدخل عدد الأيام:</label>
-        <input type="number" id="days-input" min="1" value="30">
-        <button onclick="generateQuranPlan()">إنشاء الخطة</button>
-        <table>
-            <thead>
+        <div id="quran-plan">
+            <h2>خطة ختم القرآن</h2>
+            <label for="days-input">أدخل عدد الأيام:</label>
+            <input type="number" id="days-input" min="1" max="30" value="30">
+            <button onclick="generateQuranPlan()">إنشاء الخطة</button>
+            <table>
+              <thead>
                 <tr>
-                    <th>اليوم</th>
-                    <th>الأجزاء</th>
-                    <th>من السورة</th>
-                    <th>إلى السورة</th>
+                  <th>اليوم</th>
+                  <th>من السورة</th>
+                  <th>إلى السورة</th>
                 </tr>
-            </thead>
-            <tbody id="plan-table-body"></tbody>
-        </table>
-    </div>
+              </thead>
+              <tbody id="plan-table-body"></tbody>
+            </table>
+          </div>
     
         
         
@@ -473,6 +485,8 @@
       
             
     <script src="script.js"></script>
+   
+       
     
         
 </body>

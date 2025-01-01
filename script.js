@@ -1,4 +1,13 @@
+function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    const hamburger = document.querySelector(".hamburger");
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  }
+  
 
+  
+  
 // التاريخ المتوقع لأول يوم رمضان (قم بتحديثه سنويًا)
 const ramadanStart = new Date('2025-03-27T00:00:00'); // تاريخ بداية رمضان 2025
 
@@ -150,59 +159,62 @@ setInterval(showDailyDua, 300000); // تحديث الدعاء كل 5 دقائق
 
    // قائمة بأسماء السور
    const surahs = [
-    "الفاتحة", "البقرة", "آل عمران", "النساء", "المائدة", 
-    "الأنعام", "الأعراف", "الأنفال", "التوبة", "يونس", 
-    "هود", "يوسف", "الرعد", "إبراهيم", "الحجر", 
-    "النحل", "الإسراء", "الكهف", "مريم", "طه", 
-    "الأنبياء", "الحج", "المؤمنون", "النور", "الفرقان", 
-    "الشعراء", "النمل", "القصص", "العنكبوت", "الروم", 
-    "لقمان", "السجدة", "الأحزاب", "سبأ", "فاطر", 
-    "يس", "الصافات", "ص", "الزمر", "غافر", 
-    "فصلت", "الشورى", "الزخرف", "الدخان", "الجاثية", 
-    "الأحقاف", "محمد", "الفتح", "الحجرات", "ق", 
-    "الذاريات", "الطور", "النجم", "القمر", "الرحمن", 
-    "الواقعة", "الحديد", "المجادلة", "الحشر", "الممتحنة", 
-    "الصف", "الجمعة", "المنافقون", "التغابن", "الطلاق", 
-    "التحريم", "الملك", "القلم", "الحاقة", "المعارج", 
-    "نوح", "الجن", "المزمل", "المدثر", "القيامة", 
-    "الإنسان", "المرسلات", "النبأ", "النازعات", "عبس", 
-    "التكوير", "الانفطار", "المطففين", "الانشقاق", "البروج", 
-    "الطارق", "الأعلى", "الغاشية", "الفجر", "البلد", 
-    "الشمس", "الليل", "الضحى", "الشرح", "التين", 
-    "العلق", "القدر", "البينة", "الزلزلة", "العاديات", 
-    "القارعة", "التكاثر", "العصر", "الهمزة", "الفيل", 
-    "قريش", "الماعون", "الكوثر", "الكافرون", "النصر", 
+    "الفاتحة", "البقرة", "آل عمران", "النساء", "المائدة",
+    "الأنعام", "الأعراف", "الأنفال", "التوبة", "يونس",
+    "هود", "يوسف", "الرعد", "إبراهيم", "الحجر",
+    "النحل", "الإسراء", "الكهف", "مريم", "طه",
+    "الأنبياء", "الحج", "المؤمنون", "النور", "الفرقان",
+    "الشعراء", "النمل", "القصص", "العنكبوت", "الروم",
+    "لقمان", "السجدة", "الأحزاب", "سبأ", "فاطر",
+    "يس", "الصافات", "ص", "الزمر", "غافر",
+    "فصلت", "الشورى", "الزخرف", "الدخان", "الجاثية",
+    "الأحقاف", "محمد", "الفتح", "الحجرات", "ق",
+    "الذاريات", "الطور", "النجم", "القمر", "الرحمن",
+    "الواقعة", "الحديد", "المجادلة", "الحشر", "الممتحنة",
+    "الصف", "الجمعة", "المنافقون", "التغابن", "الطلاق",
+    "التحريم", "الملك", "القلم", "الحاقة", "المعارج",
+    "نوح", "الجن", "المزمل", "المدثر", "القيامة",
+    "الإنسان", "المرسلات", "النبأ", "النازعات", "عبس",
+    "التكوير", "الانفطار", "المطففين", "الانشقاق", "البروج",
+    "الطارق", "الأعلى", "الغاشية", "الفجر", "البلد",
+    "الشمس", "الليل", "الضحى", "الشرح", "التين",
+    "العلق", "القدر", "البينة", "الزلزلة", "العاديات",
+    "القارعة", "التكاثر", "العصر", "الهمزة", "الفيل",
+    "قريش", "الماعون", "الكوثر", "الكافرون", "النصر",
     "المسد", "الإخلاص", "الفلق", "الناس"
-];
+  ];
 
-function generateQuranPlan() {
+  function generateQuranPlan() {
     const days = parseInt(document.getElementById('days-input').value);
-    const partsPerDay = Math.ceil(30 / days);
+    const surahsPerDay = Math.ceil(surahs.length / days); // عدد السور لكل يوم
     const tableBody = document.getElementById('plan-table-body');
     tableBody.innerHTML = ""; // تفريغ الجدول السابق
     
     let currentSurahIndex = 0;
 
     for (let day = 1; day <= days; day++) {
-        const startSurah = surahs[currentSurahIndex];
-        let endSurah = surahs[currentSurahIndex + partsPerDay - 1] || surahs[surahs.length - 1];
-        const row = document.createElement('tr');
+      const startSurah = surahs[currentSurahIndex];
+      const endSurahIndex = Math.min(currentSurahIndex + surahsPerDay - 1, surahs.length - 1);
+      const endSurah = surahs[endSurahIndex];
 
-        row.innerHTML = `
-            <td>${day}</td>
-            <td>الأجزاء من ${Math.ceil((day - 1) * partsPerDay + 1)} إلى ${Math.min(day * partsPerDay, 30)}</td>
-            <td>${startSurah}</td>
-            <td>${endSurah}</td>
-        `;
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${day}</td>
+        <td>${startSurah}</td>
+        <td>${endSurah}</td>
+      `;
 
-        tableBody.appendChild(row);
+      tableBody.appendChild(row);
 
-        currentSurahIndex += partsPerDay;
-        if (currentSurahIndex >= surahs.length) {
-            currentSurahIndex = surahs.length - 1;
-        }
+      // التحقق من عدم تجاوز حدود المصفوفة
+      currentSurahIndex = endSurahIndex + 1;
+      if (currentSurahIndex >= surahs.length) break;
     }
-}
+  }
+
+
+
+
 
 generateQuranPlan();
 function fetchIftarAndSuhoor(latitude, longitude) {
@@ -442,6 +454,7 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+
 
 
 
