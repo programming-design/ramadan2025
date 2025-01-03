@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTM3J5F24"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SMTM3J5F24');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
+    <title>صفحة الأحاديث الإسلامية</title>
+    <style>
+        body {
+            font-family: 'Amiri', serif; /* خط عربي */
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.8;
+            scroll-behavior: smooth; /* حركة سلسة عند الانتقال */
+        }
+        header {
+            background-color: #4a2c82;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            background-color: #4a2c82;
+            padding: 0.5rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+        }
+        nav a:hover {
+            background-color: #896bc1;
+            border-radius: 4px;
+        }
+        .container {
+            padding: 2rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            color: #4a2c82;
+            margin-top: 2rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #4a2c82;
+            display: inline-block;
+        }
+        .hadith {
+            background-color: #f0fdf4;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border: 1px solid #c1eac5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .hadith h3 {
+            margin: 0;
+            color: #4a2c82;
+        }
+        .hadith p {
+            margin: 0.5rem 0 0;
+            font-size: 1rem;
+        }
+        #scrollToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #4a2c82;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #scrollToTop:hover {
+            background-color: #4a2c82;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #4a2c82;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+         /* الشريط العلوي */
+         .navbar {
+            background-color: #4a2c82;
+            color: white;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .navbar .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 1rem;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .navbar .menu a:hover {
+            border-bottom: 2px solid white;
+        }
+        /* زر القائمة (للهواتف) */
+        .navbar .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        /* القائمة الجانبية (للهواتف) */
+        .side-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100%;
+            background-color: #4a2c82;
+            padding: 2rem;
+            box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .side-menu.active {
+            display: block;
+        }
+        .side-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .side-menu a:hover {
+            border-bottom: 2px solid white;
+        }
+        .side-menu .close-btn {
+            font-size: 1.5rem;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        /* تخصيص التصميم للأجهزة المختلفة */
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+            }
+            .navbar .menu-toggle {
+                display: block;
+            }
+        }
+        .content {
+            padding: 1rem;
+            margin: 0 auto;
+            max-width: 900px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #4a2c82;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- الشريط العلوي -->
+<div class="navbar">
+    <div class="brand">صفحة الأحاديث الإسلامية</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="menu">
+        <a href="index.html">الرئيسية</a>
+        <a href="ahadit.html">الأحاديث</a>
+        <a href="#about"> التسبيح الإلكتروني</a>
+        <a href="#contact">القرآن الكريم</a>
+        <a href="#contact">قصص الأنبياء</a>
+        <a href="#contact">التواصل</a>
+    </div>
+</div>
+
+<!-- القائمة الجانبية -->
+<div class="side-menu" id="side-menu">
+    <button class="close-btn" id="close-menu">✖</button>
+    <a href="index.html">الرئيسية</a>
+    <a href="ahadit.html">الأحاديث</a>
+    <a href="#about"> التسبيح الإلكتروني</a>
+    <a href="#contact">القرآن الكريم</a>
+    <a href="#contact">قصص الأنبياء</a>
+    <a href="#contact">التواصل</a>
+</div>
+
+
+
+<nav>
+    <a href="#faith-section">الإيمان</a>
+    <a href="#ethics-section">الأخلاق</a>
+    <a href="#worship-section">العبادات</a>
+</nav>
+
+<div class="container">
+
+    <!-- قسم الإيمان -->
+    <section id="faith-section">
+        <h2 class="section-title">أحاديث عن الإيمان</h2>
+        <div class="hadith">
+            <h3>الحديث الأول:</h3>
+            <p><strong>قال رسول الله ﷺ:</strong> "الإيمان بضع وسبعون شعبة..."</p>
+            <p><strong>التفسير:</strong> الحديث يبين أن الإيمان يتكون من جوانب متعددة تشمل العقيدة والأفعال الحسنة.</p>
+        </div>
+        <div class="hadith">
+            <h3>الحديث الثاني:</h3>
+            <p><strong>قال رسول الله ﷺ:</strong> "لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه."</p>
+            <p><strong>التفسير:</strong> الحديث يدعو إلى الإيثار ومراعاة مصالح الآخرين كما نهتم بمصالحنا.</p>
+        </div>
+    </section>
+
+    <!-- قسم الأخلاق -->
+    <section id="ethics-section">
+        <h2 class="section-title">أحاديث عن الأخلاق</h2>
+        <div class="hadith">
+            <h3>الحديث الأول:</h3>
+            <p><strong>قال رسول الله ﷺ:</strong> "إنما بعثت لأتمم مكارم الأخلاق."</p>
+            <p><strong>التفسير:</strong> الحديث يؤكد أهمية الأخلاق كجوهر رسالة الإسلام.</p>
+        </div>
+        <div class="hadith">
+            <h3>الحديث الثاني:</h3>
+            <p><strong>قال رسول الله ﷺ:</strong> "أقربكم مني مجلسًا يوم القيامة أحسنكم أخلاقًا."</p>
+            <p><strong>التفسير:</strong> الحديث يحفز المسلم على تحسين أخلاقه لنيل القرب من الرسول ﷺ في الجنة.</p>
+        </div>
+    </section>
+
+    <!-- قسم العبادات -->
+    <section id="worship-section">
+        <h2 class="section-title">أحاديث عن العبادات</h2>
+        <div class="hadith">
+            <h3>الحديث الأول:</h3>
+            <p><strong>قال رسول الله ﷺ:</strong> "من صام رمضان إيمانًا واحتسابًا غُفر له ما تقدم من ذنبه."</p>
+            <p><strong>التفسير:</strong> الحديث يبين فضل الصيام في مغفرة الذنوب عند الإخلاص فيه.</p>
+        </div>
+        <div class="hadith">
+            <h3>الحديث الثاني:</h3>
+            <p><strong>قال رسول الله ﷺ:</strong> "العمرة إلى العمرة كفارة لما بينهما."</p>
+            <p><strong>التفسير:</strong> الحديث يبرز فضل العمرة كمكفر للذنوب بين العمرتين.</p>
+        </div>
+    </section>
+
+</div>
+
+<!-- زر العودة للأعلى -->
+<button id="scrollToTop">↑</button>
+
+<footer>
+جميع الحقوق محفوظة &copy; 2025 |  النُّورُ الإِسْلَامُ 
+
+   
+</footer>
+
+<script>
+    // ظهور زر العودة للأعلى عند التمرير
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    window.onscroll = function () {
+        if (window.scrollY > 200) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    };
+
+    // وظيفة العودة للأعلى
+    scrollToTopBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // فتح القائمة الجانبية
+    const sideMenu = document.getElementById('side-menu');
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        sideMenu.classList.add('active');
+    });
+
+    // إغلاق القائمة الجانبية عند الضغط على الزر ✖
+    document.getElementById('close-menu').addEventListener('click', function () {
+        sideMenu.classList.remove('active');
+    });
+
+    // إغلاق القائمة عند الضغط خارجها
+    document.addEventListener('click', function (e) {
+        if (!sideMenu.contains(e.target) && !e.target.closest('#menu-toggle')) {
+            sideMenu.classList.remove('active');
+        }
+    });
+</script>
+
+</body>
+</html>

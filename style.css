@@ -275,16 +275,7 @@ h1 {
     margin-bottom: 5px;
 }
 
-.language-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #4a2c82;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+
 
 .language-button:hover {
     background-color: #3b2271;
@@ -758,7 +749,110 @@ footer {
   .whatsapp-button:hover {
     background-color: #128c7e;
   }
+
   
+
+
+  /***** هواتف ************/
+    /* الشريط العلوي */
+    .navbar {
+        background-color:#4a2c82;
+        color: white;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .navbar .brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .navbar .menu {
+        display: flex;
+        gap: 1rem;
+    }
+    .navbar .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    .navbar .menu a:hover {
+        border-bottom: 2px solid white;
+    }
+    /* زر القائمة (للهواتف) */
+    .navbar .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    /* القائمة الجانبية (للهواتف) */
+    .side-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100%;
+        background-color: #4a2c82;
+        padding: 2rem;
+        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+    .side-menu.active {
+        display: block;
+    }
+    .side-menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+    .side-menu a:hover {
+        border-bottom: 2px solid white;
+    }
+    .side-menu .close-btn {
+        font-size: 1.5rem;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    /* تخصيص التصميم للأجهزة المختلفة */
+    @media (max-width: 768px) {
+        .navbar .menu {
+            display: none;
+        }
+        .navbar .menu-toggle {
+            display: block;
+        }
+    }
+    .content {
+        padding: 1rem;
+        margin: 0 auto;
+        max-width: 900px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+        text-align: center;
+        padding: 1rem 0;
+        background-color: #4a2c82;
+        color: white;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+    }
 
 
 

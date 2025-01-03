@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTM3J5F24"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SMTM3J5F24');
+</script>
+    <script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace(); /* لتفعيل الأيقونات */
+</script>
+
     <meta name="description" content="موقع رمضان 2025 يعرفك بتواريخ بدء شهر رمضان، ومواقيت الصلاة، وغيرها من المعلومات الهامة عن رمضان.">
     <meta name="keywords" content="رمضان 2025, تاريخ رمضان, مواقيت الصلاة, رمضان كريم">
 
@@ -285,21 +299,34 @@
   
 
 
-    <header>
-        <nav class="navbar">
-          <div class="logo">
-            رمضان <i class="fas fa-moon"></i>
-          </div>
-         
-          <ul class="nav-links">
-            <li><a href="#countdown">العد التنازلي</a></li>
-            <li><a href="#daily-dua">دعاء اليوم</a></li>
-            <li><a href="#quran-plan">خطة القرآن</a></li>
-          </ul>
-        </nav>
-      </header>
-      
-      
+   <!-- الشريط العلوي -->
+<div class="navbar">
+    <div class="brand">   النُّورُ الإِسْلَامُ 
+
+    </div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="menu">
+        <a href="index.html">الرئيسية</a>
+        <a href="ahadit.html">الأحاديث</a>
+        <a href="#about"> التسبيح الإلكتروني</a>
+        <a href="#contact">القرآن الكريم</a>
+        <a href="#contact">قصص الأنبياء</a>
+        <a href="#contact">التواصل</a>
+    </div>
+</div>
+
+<!-- القائمة الجانبية -->
+<div class="side-menu" id="side-menu">
+    <button class="close-btn" id="close-menu">✖</button>
+    <a href="index.html">الرئيسية</a>
+    <a href="ahadit.html">الأحاديث</a>
+    <a href="#about"> التسبيح الإلكتروني</a>
+    <a href="#contact">القرآن الكريم</a>
+    <a href="#contact">قصص الأنبياء</a>
+    <a href="#contact">التواصل</a>
+</div>
+
+  
       
       
     
@@ -473,7 +500,9 @@
                 <a href="https://www.youtube.com/@Eren_tech_6" target="_blank"><i class="fab fa-youtube"></i></a>
               </div>
             </div>
-            <p>جميع الحقوق محفوظة &copy; 2025 | موقع رمضان</p>
+            <p>جميع الحقوق محفوظة &copy; 2025 |  النُّورُ الإِسْلَامُ 
+
+            </p>
           </footer>
         
 
@@ -482,7 +511,25 @@
       
             
     <script src="script.js"></script>
-   
+    <script>
+       // فتح القائمة الجانبية
+    const sideMenu = document.getElementById('side-menu');
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        sideMenu.classList.add('active');
+    });
+
+    // إغلاق القائمة الجانبية عند الضغط على الزر ✖
+    document.getElementById('close-menu').addEventListener('click', function () {
+        sideMenu.classList.remove('active');
+    });
+
+    // إغلاق القائمة عند الضغط خارجها
+    document.addEventListener('click', function (e) {
+        if (!sideMenu.contains(e.target) && !e.target.closest('#menu-toggle')) {
+            sideMenu.classList.remove('active');
+        }
+    });
+    </script>
        
     
         
