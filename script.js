@@ -270,59 +270,6 @@ function setupIftarAlarm(iftarTime) {
     }
 }
 
-const translations = {
-    ar: {
-        countdownTitle: "كم تبقى على رمضان؟",
-        days: "أيام",
-        hours: "ساعات",
-        minutes: "دقائق",
-        seconds: "ثواني",
-        dailyDuaTitle: "دعاء اليوم",
-        quranPlanTitle: "خطة ختم القرآن",
-        dateInfo: "التاريخ اليوم: ",
-        prayerTimes: "أوقات الصلاة: ",
-        suhoor: "السحور",
-        iftar: "الإفطار",
-        languageButton: "English"
-    },
-    en: {
-        countdownTitle: "How much time is left for Ramadan?",
-        days: "Days",
-        hours: "Hours",
-        minutes: "Minutes",
-        seconds: "Seconds",
-        dailyDuaTitle: "Today's Dua",
-        quranPlanTitle: "Quran Completion Plan",
-        dateInfo: "Today's Date: ",
-        prayerTimes: "Prayer Times: ",
-        suhoor: "Suhoor",
-        iftar: "Iftar",
-        languageButton: "عربي"
-    }
-};
-
-let currentLanguage = "ar";
-
-function toggleLanguage() {
-    currentLanguage = currentLanguage === "ar" ? "en" : "ar";
-    const lang = translations[currentLanguage];
-
-    document.querySelector("h1").textContent = lang.countdownTitle;
-    document.querySelectorAll(".time p")[0].textContent = lang.days;
-    document.querySelectorAll(".time p")[1].textContent = lang.hours;
-    document.querySelectorAll(".time p")[2].textContent = lang.minutes;
-    document.querySelectorAll(".time p")[3].textContent = lang.seconds;
-    document.querySelector("#daily-dua h2").textContent = lang.dailyDuaTitle;
-    document.querySelector("#quran-plan h2").textContent = lang.quranPlanTitle;
-    document.querySelector("#date-info").textContent = `${lang.dateInfo} <span id="current-date"></span>`;
-    document.querySelector("#prayer-times").textContent = lang.prayerTimes;
-    document.querySelector("#toggle-language").textContent = lang.languageButton;
-
-    // تحديث نصوص إضافية حسب الحاجة
-}
-
-document.getElementById("toggle-language").addEventListener("click", toggleLanguage);
-
 
 
 // تأثير انتقال سلس
