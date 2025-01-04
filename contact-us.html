@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>اتصل بنا - النُّورُ الإِسْلَامُ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9fafb;
+            color: #444;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+        header {
+            background-color: #2a3d4f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #4CAF50;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #2a3d4f;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>اتصل بنا - النُّورُ الإِسْلَامُ</h1>
+</header>
+
+<div class="container">
+    <h2>لديك استفسار؟</h2>
+    <p>نحن هنا للمساعدة. املأ النموذج أدناه وسنكون سعداء بالرد عليك في أقرب وقت ممكن.</p>
+    <form action="mailto:contact@yourdomain.com" method="post" enctype="text/plain">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">الرسالة:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <button type="submit">إرسال</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2025 النُّورُ الإِسْلَامُ. جميع الحقوق محفوظة.</p>
+</footer>
+
+</body>
+</html>

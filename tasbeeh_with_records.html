@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
+    <title> التسبيح</title>
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #4a2c82;
+            color: white;
+            padding: 1rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .tasbeeh-box {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .tasbeeh-box h1 {
+            color: #4a2c82;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        .tasbeeh-counter {
+            font-size: 3rem;
+            color: #4a2c82;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        .tasbeeh-controls button {
+            background-color: #a68cd5;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .tasbeeh-controls button:hover {
+            background-color: #4a2c82;
+        }
+        .record-log {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 1rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .record-log h2 {
+            color: #4a2c82;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .record-log ul {
+            list-style: none;
+            padding: 0;
+        }
+        .record-log li {
+            background-color: white;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .add-tasbeeh {
+            margin: 1rem auto;
+            max-width: 400px;
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .add-tasbeeh input {
+            width: calc(100% - 2rem);
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .add-tasbeeh button {
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #4a2c82;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        .add-tasbeeh button:hover {
+            background-color: #886ac0;
+        }
+        footer {
+            background-color: #4a2c82;
+            color: white;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+
+                 /* الشريط العلوي */
+                 .navbar {
+                    background-color: #4a2c82;
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1000;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                }
+                .navbar .brand {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+                .navbar .menu {
+                    display: flex;
+                    gap: 1rem;
+                }
+                .navbar .menu a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1rem;
+                }
+                .navbar .menu a:hover {
+                    border-bottom: 2px solid white;
+                }
+                /* زر القائمة (للهواتف) */
+                .navbar .menu-toggle {
+                    display: none;
+                    font-size: 1.5rem;
+                    background: none;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                }
+                /* القائمة الجانبية (للهواتف) */
+                .side-menu {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    width: 70%;
+                    height: 100%;
+                    background-color: #4a2c82;
+                    padding: 2rem;
+                    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                }
+                .side-menu.active {
+                    display: block;
+                }
+                .side-menu a {
+                    display: block;
+                    color: white;
+                    text-decoration: none;
+                    margin-bottom: 1rem;
+                    font-size: 1.2rem;
+                }
+                .side-menu a:hover {
+                    border-bottom: 2px solid white;
+                }
+                .side-menu .close-btn {
+                    font-size: 1.5rem;
+                    position: absolute;
+                    top: 1rem;
+                    left: 1rem;
+                    background: none;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                }
+                /* تخصيص التصميم للأجهزة المختلفة */
+                @media (max-width: 768px) {
+                    .navbar .menu {
+                        display: none;
+                    }
+                    .navbar .menu-toggle {
+                        display: block;
+                    }
+                }
+                .content {
+                    padding: 1rem;
+                    margin: 0 auto;
+                    max-width: 900px;
+                    background-color: #fff;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                footer {
+                    text-align: center;
+                    padding: 1rem 0;
+                    background-color: #4a2c82;
+                    color: white;
+                    font-size: 0.9rem;
+                    margin-top: 2rem;
+                }
+    </style>
+</head>
+<body>
+
+    
+<!-- الشريط العلوي -->
+<div class="navbar">
+    <div class="brand">  التسبيح الإلكتروني</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="menu">
+        <a href="index.html">الرئيسية</a>
+        <a href="ahadit.html">الأحاديث</a>
+        <a href="tasbeeh_with_records.html"> التسبيح الإلكتروني</a>
+        <a href="quran.html">القرآن الكريم</a>
+        <a href="#contact">قصص الأنبياء</a>
+        <a href="#contact">التواصل</a>
+    </div>
+</div>
+
+<!-- القائمة الجانبية -->
+<div class="side-menu" id="side-menu">
+    <button class="close-btn" id="close-menu">✖</button>
+    <a href="index.html">الرئيسية</a>
+    <a href="ahadit.html">الأحاديث</a>
+    <a href="tasbeeh_with_records.html"> التسبيح الإلكتروني</a>
+    <a href="quran.html">القرآن الكريم</a>
+    <a href="#contact">قصص الأنبياء</a>
+    <a href="#contact">التواصل</a>
+</div>
+
+
+
+
+
+<div class="content">
+    <div class="tasbeeh-box">
+        <h1>اذكر الله</h1>
+        <select id="tasbeeh-type">
+            <option value="سبحان الله">سبحان الله</option>
+            <option value="الحمد لله">الحمد لله</option>
+            <option value="الله أكبر">الله أكبر</option>
+            <option value="لا إله إلا الله">لا إله إلا الله</option>
+        </select>
+        <div class="tasbeeh-counter" id="tasbeeh-counter">0</div>
+        <div class="tasbeeh-controls">
+            <button onclick="incrementCounter()">تسبيح</button>
+            <button onclick="resetCounter()">إعادة التعيين</button>
+        </div>
+    </div>
+
+    <div class="add-tasbeeh">
+        <h2>إضافة تسبيح جديد:</h2>
+        <input type="text" id="new-tasbeeh" placeholder="اكتب التسبيح الجديد هنا">
+        <button onclick="addNewTasbeeh()">إضافة</button>
+    </div>
+
+    <div class="record-log">
+        <h2>سجل التسبيحات:</h2>
+        <ul id="record-list"></ul>
+    </div>
+</div>
+
+<footer>
+    جميع الحقوق محفوظة &copy; 2025 |  النُّورُ الإِسْلَامُ 
+</footer>
+
+<script>
+    let counter = 0;
+
+    // جلب السجل المحفوظ من Local Storage
+    const storedRecords = JSON.parse(localStorage.getItem('tasbeehRecords')) || [];
+    const recordList = document.getElementById('record-list');
+
+    // تحميل السجل عند فتح الصفحة
+    function loadRecords() {
+        storedRecords.forEach(record => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${record.text} - ${record.date}`;
+            recordList.appendChild(listItem);
+        });
+    }
+
+    // حفظ في السجل
+    function saveRecord(tasbeehType) {
+        const date = new Date().toLocaleString('ar-EG');
+        const record = { text: tasbeehType, date };
+        storedRecords.push(record);
+        localStorage.setItem('tasbeehRecords', JSON.stringify(storedRecords));
+
+        const listItem = document.createElement('li');
+        listItem.textContent = `${record.text} - ${record.date}`;
+        recordList.appendChild(listItem);
+    }
+
+    // زيادة العداد
+    function incrementCounter() {
+        counter++;
+        document.getElementById('tasbeeh-counter').textContent = counter;
+        if (counter === 100) {
+            const tasbeehType = document.getElementById('tasbeeh-type').value;
+            saveRecord(tasbeehType);
+            alert(`تهانينا! أكملت 100 تسبيحة من "${tasbeehType}"`);
+            resetCounter();
+        }
+    }
+
+    // إعادة تعيين العداد
+    function resetCounter() {
+        counter = 0;
+        document.getElementById('tasbeeh-counter').textContent = counter;
+    }
+
+    // إضافة تسبيح جديد
+    function addNewTasbeeh() {
+        const newTasbeeh = document.getElementById('new-tasbeeh').value.trim();
+        if (newTasbeeh) {
+            const select = document.getElementById('tasbeeh-type');
+            const option = document.createElement('option');
+            option.value = newTasbeeh;
+            option.textContent = newTasbeeh;
+            select.appendChild(option);
+            document.getElementById('new-tasbeeh').value = '';
+            alert('تمت إضافة التسبيح الجديد بنجاح!');
+        }
+    }
+
+    // تحميل السجل
+    loadRecords();
+
+
+    
+    // فتح القائمة الجانبية
+    const sideMenu = document.getElementById('side-menu');
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        sideMenu.classList.add('active');
+    });
+
+    // إغلاق القائمة الجانبية عند الضغط على الزر ✖
+    document.getElementById('close-menu').addEventListener('click', function () {
+        sideMenu.classList.remove('active');
+    });
+
+    // إغلاق القائمة عند الضغط خارجها
+    document.addEventListener('click', function (e) {
+        if (!sideMenu.contains(e.target) && !e.target.closest('#menu-toggle')) {
+            sideMenu.classList.remove('active');
+        }
+    });
+</script>
+
+</body>
+</html>
+
