@@ -3,20 +3,20 @@ const CACHE_NAME = 'pwa-cache-v1';
 // List of assets to pre-cache
 const ASSETS_TO_CACHE = [
   '/',
-  'index.html',
-  'styles.css',
-  'script.js',
-  'logo.png',
-  'lantern.png',
-  'ahadit.html',
-  'about-us.html',
-  'contact-us.html',
-  'privacy-policy.html',
-  'quiz.html',
-  'quran.html',
-  'tasbeeh_with_records.html',
-  'إخلاء المسؤولية.html',
-  'شروط الاستخدام.html',
+  '/index.html',
+  '/styles.css',
+  '/script.js',
+  '/logo.png',
+  '/lantern.png',
+  '/ahadit.html',
+  '/about-us.html',
+  '/contact-us.html',
+  '/privacy-policy.html',
+  '/quiz.html',
+  '/quran.html',
+  '/tasbeeh_with_records.html',
+  '/إخلاء المسؤولية.html',
+  '/شروط الاستخدام.html',
 ];
 
 // Install event: Pre-cache resources
@@ -66,7 +66,7 @@ self.addEventListener('fetch', (event) => {
     }).catch(() => {
       // Fallback for offline scenario
       if (event.request.mode === 'navigate') {
-        return caches.match('index.html');
+        return caches.match('/index.html');
       }
     })
   );
