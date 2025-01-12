@@ -1,0 +1,25 @@
+{
+    "name": "AlIslamLight",
+    "short_name": "AlIslam",
+    "description": "AlIslamLight - Your guide to Islamic teachings and resources.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4a2c82",
+    "icons": [
+      {
+        "src": "192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "Ar"
+  }
+  
