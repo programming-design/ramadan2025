@@ -66,7 +66,7 @@ self.addEventListener('fetch', (event) => {
     }).catch(() => {
       // Fallback for offline scenario
       if (event.request.mode === 'navigate') {
-        return caches.match('/index.html');
+        return caches.match('index.html');
       }
     })
   );
