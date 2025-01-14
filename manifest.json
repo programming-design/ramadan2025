@@ -1,25 +1,21 @@
 {
-    "name": "AlIslamLight",
-    "short_name": "AlIslam",
-    "description": "AlIslamLight - Your guide to Islamic teachings and resources.",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#4a2c82",
-    "icons": [
-      {
-        "src": "/icons/icon-192x192.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "/icons/icon-512x512.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ],
-    "orientation": "portrait-primary",
-    "scope": "/",
-    "lang": "Ar"
+  "name": "نُورُ الإِسْلَامِ",
+  "short_name": "نور الإسلام",
+  "description": "منصة إسلامية تقدم محتوى ديني متنوع.",
+  "icons": [
+  {
+    "src": "web-app-manifest-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "web-app-manifest-512x512.png",
+    "sizes": "512x512",
+    "type": "image/png"
   }
-  
+],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4a2c82"
+}
