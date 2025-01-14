@@ -1,7 +1,7 @@
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('my-cache').then(function(cache) {
-      return Promise.all([
+      return cache.addAll([
         './',
         'index.html',
         'styles.css',
@@ -24,20 +24,6 @@ self.addEventListener('install', function(event) {
         'web-app-manifest-512x512.png',
         'إخلاء المسؤولية.html',
         'شروط الاستخدام.html'
-        
- ].map(function(url) {
-          return fetch(url).then(function(response) {
-            if (!response.ok) {
-              throw new TypeError('Failed to fetch ' + url);
-            }
-            return cache.put(url, response);
-          });
-        })
-      );
-    })
-  );
-});
-
       ]);
     })
   );

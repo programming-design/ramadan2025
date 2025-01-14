@@ -601,9 +601,11 @@
         }
     });
 
-  
+   
       
-       if ('serviceWorker' in navigator) {
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('sw.js')
             .then(function(registration) {
               console.log('تم تسجيل عامل الخدمة بنجاح:', registration.scope);
@@ -612,8 +614,8 @@
               console.log('فشل تسجيل عامل الخدمة:', error);
             });
         }
-    </script>
-
+      </script>
+      
        
     
         
