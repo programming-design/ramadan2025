@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="web-app-manifest-512x512" sizes="512x512" href="/web-app-manifest-512x512.png" />
 <meta name="apple-mobile-web-app-title" content="نُورُ الإِسْلَامِ" />
-<link rel="manifest" href="/site.webmanifest" />
+
 
 
 <link rel="manifest" href="manifest.json">
@@ -601,20 +601,9 @@
         }
     });
 
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered:', registration);
-          })
-          .catch(error => {
-            console.error('Service Worker registration failed:', error);
-          });
-      }
+  
       
-      
-    </script>
-    <script>
-        if ('serviceWorker' in navigator) {
+       if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('sw.js')
             .then(function(registration) {
               console.log('تم تسجيل عامل الخدمة بنجاح:', registration.scope);
@@ -623,8 +612,8 @@
               console.log('فشل تسجيل عامل الخدمة:', error);
             });
         }
-      </script>
-      
+    </script>
+
        
     
         
