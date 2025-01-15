@@ -46,52 +46,6 @@ function showCurrentDate() {
 // استدعاء الدالة عند تحميل الصفحة
 showCurrentDate();
 
- // الحصول على الموقع الجغرافي من المتصفح
- function getLocationAndFetchPrayerTimes() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(fetchPrayerTimes, showError);
-    } else {
-        alert("الموقع الجغرافي غير مدعوم في هذا المتصفح.");
-    }
-}
-
-// جلب أوقات الصلاة من API باستخدام خطوط الطول والعرض
-function fetchPrayerTimes(position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-
-    const apiUrl = `https://api.aladhan.com/v1/timings?latitude=${latitude}&longitude=${longitude}&method=2`;
-
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            const timings = data.data.timings;
-
-            // تحديث النصوص مع أوقات الصلاة
-            document.getElementById('fajr-time').textContent = timings.Fajr;
-            document.getElementById('sunrise-time').textContent = timings.Sunrise;
-            document.getElementById('dhuhr-time').textContent = timings.Dhuhr;
-            document.getElementById('asr-time').textContent = timings.Asr;
-            document.getElementById('maghrib-time').textContent = timings.Maghrib;
-            document.getElementById('isha-time').textContent = timings.Isha;
-
-            // إخفاء نص التحميل وإظهار الأوقات
-            document.getElementById('loading').style.display = 'none';
-            document.querySelector('.prayer-times').style.display = 'flex';
-        })
-        .catch(error => {
-            alert("حدث خطأ أثناء جلب أوقات الصلاة.");
-            console.error(error);
-        });
-}
-
-// عرض خطأ في حالة فشل تحديد الموقع
-function showError(error) {
-    alert("تعذر الحصول على الموقع الجغرافي. يرجى تمكين الموقع والمحاولة مرة أخرى.");
-}
-
-// استدعاء الوظيفة عند تحميل الصفحة
-getLocationAndFetchPrayerTimes();
 
 
  // قائمة الأدعية
@@ -312,10 +266,10 @@ function fetchPrayerTimesWithIcons(latitude, longitude) {
 }
 
 // استدعاء الدالة مع الموقع الجغرافي للمستخدم
-navigator.geolocation.getCurrentPosition(
-    position => fetchPrayerTimesWithIcons(position.coords.latitude, position.coords.longitude),
-    () => alert("يرجى السماح بالوصول إلى الموقع.")
-);
+// navigator.geolocation.getCurrentPosition(
+   // position => fetchPrayerTimesWithIcons(position.coords.latitude, position.coords.longitude),
+  //  () => alert("يرجى السماح بالوصول إلى الموقع.")
+// );
 
  
 
