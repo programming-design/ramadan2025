@@ -421,45 +421,49 @@
 
     <div class="container">
         <h1>التاريخ الحالي</h1>
-        <p id="date-info">التاريخ اليوم: <span id="current-date">جارٍ التحميل...</span></p>
+        <p id="date-info">
+            <span id="current-date">جارٍ التحميل...</span><br>
+            <span id="hijri-date">جارٍ تحميل التاريخ الهجري...</span>
+        </p>
     </div>
+    
    <!--    <p id="prayer-times">أوقات الصلاة: <span id="prayers"></span></p>--> 
-
-        <section id="prayer-times-section">
-            <h2><i class="fas fa-clock"></i> أوقات الصلاة</h2>
-            <div class="prayer-times">
-                <div class="prayer">
-                    <i class="fas fa-cloud-moon"></i>
-                    <p>السحور</p>
-                    <span id="suhoor-time">06:35 AM</span>
-                </div>
-                <div class="prayer">
-                    <i class="fas fa-sun"></i>
-                    <p>الفجر</p>
-                    <span id="fajr-time">06:46 AM</span>
-                </div>
-                <div class="prayer">
-                    <i class="fas fa-sunset"></i>
-                    <p>الظهر</p>
-                    <span id="dhuhr-time">13:31 PM</span>
-                </div>
-                <div class="prayer">
-                    <i class="fas fa-cloud-sun"></i>
-                    <p>العصر</p>
-                    <span id="asr-time">16:17 PM</span>
-                </div>
-                <div class="prayer">
-                    <i class="fas fa-cloud-sun-rain"></i>
-                    <p>المغرب</p>
-                    <span id="maghrib-time">18:43 PM</span>
-                </div>
-                <div class="prayer">
-                    <i class="fas fa-cloud-moon"></i>
-                    <p>العشاء</p>
-                    <span id="isha-time">19:56 PM</span>
-                </div>
-            </div>
-        </section>
+   <section id="prayer-times-section">
+    <h2><i class="fas fa-clock"></i> أوقات الصلاة</h2>
+    <div id="location"><strong>المنطقة:</strong> جاري تحديد الموقع...</div>
+    <div class="prayer-times">
+        <div class="prayer">
+            <i class="fas fa-cloud-moon"></i>
+            <p>السحور</p>
+            <span id="suhoor-time">-</span>
+        </div>
+        <div class="prayer">
+            <i class="fas fa-sun"></i>
+            <p>الفجر</p>
+            <span id="fajr-time">-</span>
+        </div>
+        <div class="prayer">
+            <i class="fas fa-sunset"></i>
+            <p>الظهر</p>
+            <span id="dhuhr-time">-</span>
+        </div>
+        <div class="prayer">
+            <i class="fas fa-cloud-sun"></i>
+            <p>العصر</p>
+            <span id="asr-time">-</span>
+        </div>
+        <div class="prayer">
+            <i class="fas fa-cloud-sun-rain"></i>
+            <p>المغرب</p>
+            <span id="maghrib-time">-</span>
+        </div>
+        <div class="prayer">
+            <i class="fas fa-cloud-moon"></i>
+            <p>العشاء</p>
+            <span id="isha-time">-</span>
+        </div>
+    </div>
+</section>
 
         
         <div id="daily-dua">
@@ -615,7 +619,67 @@
             });
         }
       </script>
-      
+
+<script>
+    // تحديد الموقع الجغرافي
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const { latitude, longitude } = position.coords;
+            // جلب اسم المنطقة باستخدام Nominatim API
+            const locationResponse = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`);
+            const locationData = await locationResponse.json();
+            document.getElementById('location').innerHTML = `<strong>المنطقة:</strong> ${locationData.address.city || locationData.address.town || locationData.address.village}`;
+
+            // جلب أوقات الصلاة باستخدام Aladhan API
+            const prayerResponse = await fetch(`https://api.aladhan.com/v1/timings?latitude=${latitude}&longitude=${longitude}&method=2`);
+            const prayerData = await prayerResponse.json();
+            const timings = prayerData.data.timings;
+
+            document.getElementById('suhoor-time').textContent = timings.Imsak;
+            document.getElementById('fajr-time').textContent = timings.Fajr;
+            document.getElementById('dhuhr-time').textContent = timings.Dhuhr;
+            document.getElementById('asr-time').textContent = timings.Asr;
+            document.getElementById('maghrib-time').textContent = timings.Maghrib;
+            document.getElementById('isha-time').textContent = timings.Isha;
+        }, (error) => {
+            document.getElementById('location').textContent = 'تعذر تحديد الموقع';
+        });
+    } else {
+        document.getElementById('location').textContent = 'ميزة الموقع غير مدعومة في متصفحك';
+    }
+</script>
+<script>
+    function showCurrentDate() {
+        const now = new Date();
+
+        // تنسيق التاريخ الميلادي
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+        const gregorianDate = now.toLocaleDateString('ar-EG', options);
+        document.getElementById('current-date').textContent = `التاريخ اليوم: ${gregorianDate}`;
+
+        // جلب التاريخ الهجري باستخدام Aladhan API
+        const apiUrl = `https://api.aladhan.com/v1/gToH?date=${now.getDate()}-${now.getMonth() + 1}-${now.getFullYear()}`;
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const hijriDate = data.data.hijri;
+                const hijriFormattedDate = `${hijriDate.day} ${hijriDate.month.ar} ${hijriDate.year}`;
+                document.getElementById('hijri-date').textContent = `التاريخ الهجري: ${hijriFormattedDate}`;
+            })
+            .catch(error => {
+                document.getElementById('hijri-date').textContent = 'تعذر جلب التاريخ الهجري';
+                console.error('Error fetching Hijri date:', error);
+            });
+    }
+
+    // استدعاء الدالة عند تحميل الصفحة
+    showCurrentDate();
+</script>
        
     
         
