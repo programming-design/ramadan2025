@@ -8,6 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="web-app-manifest-512x512" sizes="512x512" href="/web-app-manifest-512x512.png" />
 <meta name="apple-mobile-web-app-title" content="نُورُ الإِسْلَامِ" />
+<meta name="theme-color" content="#4a2c82">  <!-- هنا يمكنك تغيير اللون حسب حاجتك -->
 
 
 
@@ -354,12 +355,148 @@
             height: 50px;
             object-fit: cover;
         }
-        
+     /** شاشة التحميل **/
+     /* تنسيق شاشة التحميل */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* تنسيق الشعار */
+.logo img {
+    width: 120px; /* تعديل حجم الشعار حسب الحاجة */
+}
+
+/* تنسيق المؤشر الدائري */
+.spinner {
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ddd;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* حركة الدوران */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* إخفاء المحتوى الرئيسي أثناء التحميل */
+#main-content {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+
+
+/**********************************************************************/
+/* تنسيق النافذة المنبثقة */
+.modal {
+    display: none; /* إخفاء النافذة في البداية */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* محتوى النافذة */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* زر الإغلاق */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* نصوص الرسالة */
+h2 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+
 
     </style>
 </head>
 <body>
-  
+   <!-- شاشة التحميل -->
+   <div id="loading-screen">
+    <div class="logo">
+        <img src="favicon-96x96.png" alt="الشعار" />
+    </div>
+    <div class="spinner"></div>
+</div>
+
+
+ <!-- النافذة المنبثقة (Modal) -->
+ <div id="welcome-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>مرحبًا بكم في موقعنا الإسلامي</h2>
+        <p>
+            بسم الله الرحمن الرحيم. الحمد لله الذي هدانا لهذا وما كنا لنهتدي لولا أن هدانا الله. 
+            نسأل الله أن يوفقنا وإياكم لما فيه الخير والصلاح.
+        </p>
+        <p>
+            إن الإسلام دين الرحمة والسلام، ويحث على الأخلاق الحميدة والمعاملة الحسنة. 
+            نسعى في هذا الموقع لتقديم محتوى يثري معرفتكم ويقربكم من الله.
+        </p>
+        <p>
+            تجدون هنا مقالات دينية، أذكار يومية، وتفاسير للقرآن الكريم. لا تنسوا متابعة الموقع للحصول على المزيد من الفائدة.
+        </p>
+        <footer>
+            © 2025 - جميع الحقوق محفوظة لموقعنا الإسلامي
+        </footer>
+    </div>
+</div>
 
 
 <!-- الشريط العلوي -->
@@ -679,6 +816,48 @@
 
     // استدعاء الدالة عند تحميل الصفحة
     showCurrentDate();
+
+
+
+
+    /////////////////////////////////////////////////////////////
+    // التأكد من إخفاء شاشة التحميل بعد تحميل الصفحة
+window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loading-screen");
+    const mainContent = document.getElementById("main-content");
+
+    // إضافة تأثير عند الإخفاء (اختياري)
+    loadingScreen.style.opacity = "0";
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+        mainContent.style.display = "block";
+    }, 500); // 500 ميلي ثانية لإخفاء الشاشة مع تأثير سلس
+});
+
+////////////////////////////////////////////////////////////////////
+
+// جلب العناصر المطلوبة
+const modal = document.getElementById("welcome-modal");
+const closeBtn = document.querySelector(".close-btn");
+
+// عرض النافذة عند تحميل الصفحة
+window.addEventListener("load", () => {
+    modal.style.display = "flex";
+});
+
+// إغلاق النافذة عند النقر على زر الإغلاق
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// إغلاق النافذة عند النقر خارجها
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+
 </script>
        
     
