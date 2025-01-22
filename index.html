@@ -48,6 +48,7 @@
 </script>
 
 <!--  تحسين البحث  ------->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="تعرف على موقع نور الإسلام وتجليات الإيمان، حيث نشارككم مواضيع ملهمة عن رمضان، الصلاة، الدعاء، القرآن الكريم، الأحاديث، التسبيح والنصائح.">
@@ -63,7 +64,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>   نور الإسلام </title>
-rel="canonical"
+     <link rel="canonical" href="index.html">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Scrollbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -464,6 +465,70 @@ footer {
 }
 
 
+
+/**********************************************************************/
+
+/* إعادة تعيين الخصائص الأساسية لجميع العناصر */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* تنسيق body بشكل عام */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* تنسيق قسم الهيدر */
+.hero-header {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* يغطي كامل الشاشة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* تنسيق الحاوية التي تحتوي على الصورة */
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* إخفاء الأجزاء التي تتجاوز الحدود */
+}
+
+/* تنسيق الصورة بشكل مرن */
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* التأكد من أن الصورة تملأ الحاوية بشكل كامل */
+}
+
+/* ميديا كويري لأحجام الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .hero-header {
+        height: 100vh; /* الحفاظ على نفس ارتفاع الصورة على الأجهزة الصغيرة */
+    }
+    .hero-image {
+        width: 140%;
+        height: 100%;
+        object-fit: cover; /* التأكد من أن الصورة تملأ الحاوية بشكل كامل */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-header {
+        height: 100vh; /* نفس الشيء لأصغر الأجهزة */
+    }
+    .hero-image {
+        width: 140%;
+        height: 100%;
+        object-fit: cover; /* التأكد من أن الصورة تملأ الحاوية بشكل كامل */
+    }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -489,6 +554,9 @@ footer {
         </footer>
     </div>
 </div>
+
+
+
 
 
 <!-- الشريط العلوي -->
@@ -527,7 +595,12 @@ footer {
   
       
       
-    
+  <!-- قسم الهيدر الذي يحتوي على الصورة -->
+  <header class="hero-header">
+    <div class="image-container">
+        <img src="img.jpg" alt="صورة الموقع" class="hero-image">
+    </div>
+</header>
     
     <div class="container">
         <h1>كم تبقى على رمضان؟</h1>
