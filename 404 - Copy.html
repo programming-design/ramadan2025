@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>قريبا - موقع إسلامي</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <style>
+        /* Reset the default margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and basic styling */
+        body {
+            background: #282c34;
+            color: #f4f4f4;
+            font-family: 'Cairo', sans-serif;
+            text-align: center;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Centering content */
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header with a bit of space */
+        .header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #f1c40f;
+        }
+
+        .subheading {
+            font-size: 1.4rem;
+            color: #f4f4f4;
+            margin-bottom: 20px;
+        }
+
+        /* Countdown Style */
+        .countdown {
+            font-size: 3rem;
+            color: #f1c40f;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons i {
+            font-size: 1.8rem;
+            color: #f4f4f4;
+            transition: 0.3s ease;
+        }
+
+        .social-icons i:hover {
+            color: #f1c40f;
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        footer a {
+            color: #f1c40f;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive for small devices */
+        @media (max-width: 768px) {
+            .header {
+                font-size: 2rem;
+            }
+
+            .subheading {
+                font-size: 1.2rem;
+            }
+
+            .countdown {
+                font-size: 2rem;
+            }
+
+            .social-icons i {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Smooth Gradient Background Animation */
+        @keyframes gradient {
+            0% { background: #282c34; }
+            50% { background: #4e8fd8; }
+            100% { background: #282c34; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">صفحة فعاليات قريبا</header>
+        <p class="subheading">نحن الآن في المرحلة النهائية للإنشاء!</p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="countdown">
+            00 : 00 : 00 : 00
+        </div>
+
+       
+
+    <footer>
+        جميع الحقوق محفوظة &copy; <a href="index.html" 2025 |  نُورُ الإِسْلَامِ ></a>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        const countdownDate = new Date("Mar 26, 2025 00:00:00").getTime();
+
+        const countdownElement = document.getElementById("countdown");
+
+        setInterval(function() {
+            let now = new Date().getTime();
+            let distance = countdownDate - now;
+
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days} : ${hours} : ${minutes} : ${seconds}`;
+
+            if (distance < 0) {
+                clearInterval();
+                countdownElement.innerHTML = "تم إطلاق الموقع!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
