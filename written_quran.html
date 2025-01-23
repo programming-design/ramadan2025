@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+    <!--  ads   ------><script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5887199789142850"
+crossorigin="anonymous"></script>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTM3J5F24"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-SMTM3J5F24');
+</script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+feather.replace(); /* لتفعيل الأيقونات */
+</script>
+
+<!--  تحسين البحث  ------->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="تعرف على موقع نور الإسلام وتجليات الإيمان، حيث نشارككم مواضيع ملهمة عن رمضان، الصلاة، الدعاء، القرآن الكريم، الأحاديث، التسبيح والنصائح.">
+<meta name="keywords" content="نور الإسلام, رمضان, الصلاة, الدعاء, الأحاديث, القرآن الكريم, التسبيح, نصائح رمضانية">
+<meta name="author" content="نور الإسلام">
+<meta property="og:title" content="من نحن - نور الإسلام">
+<meta property="og:description" content="مرحبًا بكم في موقع نور الإسلام، الوجهة الروحانية التي تجمع بين رمضان، الصلاة، الدعاء، والتسبيح.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.alislamlight.online/">
+<meta property="og:image" content="">
+<!--------------------------------------->
+<link rel="manifest" href="manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
+</script>
+
+
+<link rel="canonical" href="index.html">
+<link rel="stylesheet" href="Scrollbar.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title> القرآن الكريم المكتوب</title>
+    <style>
+        /* الخطوط والألوان */
+        body {
+            font-family: 'Amiri', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background-color: #4a2c82;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+           
+            font-weight: bold;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 120px); /* حساب الطول */
+            padding: 1rem;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 500px;
+        }
+        .controls select, .controls button {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .controls button {
+            background-color: #9d83cf;
+            color: white;
+            font-weight: bold;
+        }
+        .controls button:hover {
+            background-color: #4a2c82;
+        }
+        .surah-content {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 800px;
+            width: 90%;
+            overflow-y: auto;
+            max-height: calc(100vh - 220px);
+        }
+        .surah-content h2 {
+            text-align: center;
+            color: #4a2c82;
+            margin-bottom: 1rem;
+        }
+        .surah-content p {
+            text-align: justify;
+            line-height: 2;
+            margin: 0.5rem 0;
+        }
+        footer {
+            background-color: #6f5c93;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+
+
+        /*****************هواتف****************/
+
+
+        header {
+            background-color: #4a2c82;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            background-color: #4a2c82;
+            padding: 0.5rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+        }
+        nav a:hover {
+            background-color: #896bc1;
+            border-radius: 4px;
+        }
+        .container {
+            padding: 2rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            color: #4a2c82;
+            margin-top: 2rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #4a2c82;
+            display: inline-block;
+        }
+        .hadith {
+            background-color: #f0fdf4;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border: 1px solid #c1eac5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .hadith h3 {
+            margin: 0;
+            color: #4a2c82;
+        }
+        .hadith p {
+            margin: 0.5rem 0 0;
+            font-size: 1rem;
+        }
+        #scrollToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #4a2c82;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #scrollToTop:hover {
+            background-color: #4a2c82;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #4a2c82;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+         /* الشريط العلوي */
+         .navbar {
+            background-color: #4a2c82;
+            color: white;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .navbar .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 1rem;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .navbar .menu a:hover {
+            border-bottom: 2px solid white;
+        }
+        /* زر القائمة (للهواتف) */
+        .navbar .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        /* القائمة الجانبية (للهواتف) */
+        .side-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100%;
+            background-color: #4a2c82;
+            padding: 2rem;
+            box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .side-menu.active {
+            display: block;
+        }
+        .side-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .side-menu a:hover {
+            border-bottom: 2px solid white;
+        }
+        .side-menu .close-btn {
+            font-size: 1.5rem;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        /* تخصيص التصميم للأجهزة المختلفة */
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+            }
+            .navbar .menu-toggle {
+                display: block;
+            }
+        }
+        .content {
+            padding: 1rem;
+            margin: 0 auto;
+            max-width: 900px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #4a2c82;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+
+                /* إضافة قائمة منبثقة عند الضغط على القرآن الكريم */
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+        
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #4a2c82;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+                    text-align: right;
+                    border-radius: 5px;
+                }
+        
+                .dropdown.active .dropdown-content {
+                    display: block;
+                }
+        
+                .dropdown-content a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+        
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+        
+        
+        
+             
+                /* محتويات الاختيارات الجديدة (مكتوب و مسموع) */
+                .quran-options-list {
+                    display: none;
+                    padding-right: 20px;
+                }
+        
+                .quran-options-list a {
+                    padding-left: 30px;
+        
+                    color: white;
+                }
+        
+                .quran-options-list a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+        
+        
+                .ramadan-options-list {
+                    display: none;
+                    padding-right: 20px;
+                }
+        
+                .ramadan-options-list a {
+                    padding-left: 30px;
+        
+                    color: white;
+                }
+        
+                .ramadan-options-list a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+        
+                /* استخدام media query لجعل القائمة أكثر توافقًا مع الهواتف */
+                @media (max-width: 768px) {
+                    /* إخفاء القائمة العلوية في الشاشات الصغيرة */
+                    .navbar .menu {
+                        display: none;
+                    }
+        
+                    .menu-toggle {
+                        display: block;
+                    }
+                }
+        
+    </style>
+</head>
+<body>                                                       <amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-5887199789142850">
+</amp-auto-ads>
+
+     <!-- الشريط العلوي -->
+    <div class="navbar">
+        <div class="brand">
+            <img src="favicon.ico" alt="نور الإسلام" />
+        </div>
+        <!-- زر القائمة الجانبية على الهواتف -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div class="menu">
+            <a href="index.html">الرئيسية</a>
+            <a href="ahadit.html">الأحاديث</a>
+            <a href="tasbeeh_with_records.html">التسبيح الإلكتروني</a>
+            
+            <!-- قائمة منبثقة عند الضغط على القرآن الكريم -->
+            <div class="dropdown" id="quran-dropdown">
+                <a href="#" class="dropdown-btn">القرآن الكريم</a>
+                <div class="dropdown-content">
+                    <a href="written_quran.html">القرآن الكريم المكتوب</a>
+                    <a href="listening_quran.html">القرآن الكريم المسموع</a>
+                 <!----  <a href="quran_apps.html">تطبيقات القرآن</a>-->
+                    <!--  <a href="reciters.html">قراء القرآن</a>-->
+                </div>
+            </div>
+
+            <a href="Islamic wallpapers.html">خلفيات إسلامية</a>
+            
+                    <!-- قائمة منبثقة عند الضغط على  الرمضان -->
+                    <div class="dropdown" id="ramadan-dropdown">
+                        <a href="#" class="dropdown-btn">الرمضان</a>
+                        <div class="dropdown-content">
+                            <a href="soon ramadan.html">موعد الرمضان</a>
+                            <a href="404 - Copy.html">الفعاليات</a>
+                        </div>
+                    </div>
+            
+
+            <a href="contact-us.html">التواصل</a>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- القائمة الجانبية الخاصة بالهواتف -->
+    <div class="side-menu" id="side-menu">
+        <button class="close-btn" id="close-menu">✖</button>
+        
+        <a href="index.html">الرئيسية</a>
+        <a href="ahadit.html">الأحاديث</a>
+        <a href="tasbeeh_with_records.html">التسبيح الإلكتروني</a>
+
+        <!-- اختيار القرآن الكريم الذي سيفتح اختيارات إضافية -->
+        <a href="#" id="quran-link" class="quran-option">القرآن الكريم</a>
+
+        <!-- اختيارات القرآن الكريم التي ستكون مخفية حتى الضغط على "القرآن الكريم" -->
+        <div class="quran-options-list" id="quran-options">
+            <a href="written_quran.html">القرآن الكريم المكتوب</a>
+            <a href="listening_quran.html">القرآن الكريم المسموع</a>
+          <!--  <!--  <a href="reciters.html">قراء القرآن</a>-->-->
+        </div>
+
+        <a href="Islamic wallpapers.html">خلفيات إسلامية</a>
+
+                <!-- اختيار  الرمضان الذي سيفتح اختيارات إضافية -->
+                <a href="#" id="ramadan-link" class="ramadan-option"> الرمضان</a>
+ <!-- اختيارات   التي ستكون مخفية حتى الضغط على " الرمضان" -->
+        <div class="ramadan-options-list" id="ramadan-options">
+            <a href="soon ramadan.html"> موعد الرمضان</a>
+            <a href="404.html"> الفعاليات</a>
+        </div>
+      
+        <a href="contact-us.html">التواصل</a>
+    </div>
+  
+<!-- شريط العنوان 
+<div class="navbar">
+    صفحة القرآن الكريم
+</div>-->
+
+<!-- المحتوى -->
+<div class="content">
+    <!-- قائمة السور واختيارها -->
+    <div class="controls">
+        <select id="surah-select">
+            <option value="">اختر السورة</option>
+        </select>
+        <button onclick="loadSurah()">عرض السورة</button>
+    </div>
+
+    <!-- النص القرآني -->
+    <div id="surah-content" class="surah-content" style="display: none;">
+        <h2 id="surah-title">عنوان السورة</h2>
+        <div id="surah-text">...</div>
+    </div>
+</div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5887199789142850"
+     crossorigin="anonymous"></script>
+<!-- صورية جديدة -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5887199789142850"
+     data-ad-slot="4852794472"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- الفوتر -->
+<footer>
+    جميع الحقوق محفوظة &copy; 2025 |  نُورُ الإِسْلَامِ 
+</footer>
+<script src="Scrollbar.js"></script>
+<script>
+    // تحميل قائمة السور
+    async function fetchSurahs() {
+        const surahSelect = document.getElementById('surah-select');
+        try {
+            const response = await fetch('https://api.alquran.cloud/v1/surah');
+            if (!response.ok) throw new Error('تعذر تحميل السور');
+            const data = await response.json();
+            data.data.forEach(surah => {
+                const option = document.createElement('option');
+                option.value = surah.number;
+                option.textContent = `${surah.number}. ${surah.name}`;
+                surahSelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error(error);
+            surahSelect.innerHTML = `<option>تعذر تحميل السور</option>`;
+        }
+    }
+
+    // تحميل نص السورة
+    async function loadSurah() {
+        const surahNumber = document.getElementById('surah-select').value;
+        const surahTitle = document.getElementById('surah-title');
+        const surahText = document.getElementById('surah-text');
+        const surahContent = document.getElementById('surah-content');
+
+        if (!surahNumber) {
+            alert('يرجى اختيار سورة أولاً');
+            return;
+        }
+
+        surahContent.style.display = 'block';
+        surahTitle.textContent = 'جاري التحميل...';
+        surahText.innerHTML = '...';
+
+        try {
+            const response = await fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}`);
+            if (!response.ok) throw new Error('تعذر تحميل النص');
+            const data = await response.json();
+            surahTitle.textContent = `${data.data.name}`;
+            surahText.innerHTML = data.data.ayahs.map(ayah => `<p>${ayah.numberInSurah} - ${ayah.text}</p>`).join('');
+        } catch (error) {
+            console.error(error);
+            surahText.innerHTML = `<p>تعذر تحميل النص، يرجى المحاولة لاحقًا.</p>`;
+        }
+    }
+
+
+
+    
+    // فتح القائمة الجانبية
+    const sideMenu = document.getElementById('side-menu');
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        sideMenu.classList.add('active');
+    });
+
+    // إغلاق القائمة الجانبية عند الضغط على الزر ✖
+    document.getElementById('close-menu').addEventListener('click', function () {
+        sideMenu.classList.remove('active');
+    });
+
+    // إغلاق القائمة عند الضغط خارجها
+    document.addEventListener('click', function (e) {
+        if (!sideMenu.contains(e.target) && !e.target.closest('#menu-toggle')) {
+            sideMenu.classList.remove('active');
+        }
+    });
+
+    // تحميل السور عند تحميل الصفحة
+    fetchSurahs();
+</script>
+
+
+    <!-- جافا سكريبت لفتح وإغلاق القائمة الجانبية ، وتفعيل المنبثق عند الضغط على القرآن الكريم -->
+    <script>
+       
+
+        // تفعيل وفتح/إغلاق القائمة المنبثقة عند الضغط على "القرآن الكريم"
+        document.getElementById("quran-dropdown").addEventListener("click", function(event) {
+            this.classList.toggle('active');
+            event.stopPropagation();  // لمنع إعادة تمرير الحدث إلى عناصر أخرى
+        });
+
+        // إغلاق القائمة المنبثقة إذا تم الضغط في أي مكان آخر في الصفحة
+        document.addEventListener("click", function(event) {
+            if (!event.target.closest('.dropdown')) {
+                document.getElementById("quran-dropdown").classList.remove('active');
+            }
+        });
+
+                // تفعيل وفتح/إغلاق القائمة المنبثقة عند الضغط على "القرآن الكريم"
+                document.getElementById("ramadan-dropdown").addEventListener("click", function(event) {
+                    this.classList.toggle('active');
+                    event.stopPropagation();  // لمنع إعادة تمرير الحدث إلى عناصر أخرى
+                });
+        
+                // إغلاق القائمة المنبثقة إذا تم الضغط في أي مكان آخر في الصفحة
+                document.addEventListener("click", function(event) {
+                    if (!event.target.closest('.dropdown')) {
+                        document.getElementById("ramadan-dropdown").classList.remove('active');
+                    }
+                });
+    </script>
+        <!-- جافا سكريبت لفتح وإغلاق القائمة الجانبية الخاصة بالهواتف -->
+    <script>
+       
+
+        // تفعيل/إخفاء خيارات القرآن الكريم عند الضغط على "القرآن الكريم"
+        document.getElementById("quran-link").addEventListener("click", function() {
+            var options = document.getElementById("quran-options");
+            // التبديل بين إظهار وإخفاء القائمة
+            if (options.style.display === "block") {
+                options.style.display = "none";
+            } else {
+                options.style.display = "block";
+            }
+        });
+
+
+             // تفعيل/إخفاء خيارات القرآن الكريم عند الضغط على " الرمضان"
+             document.getElementById("ramadan-link").addEventListener("click", function() {
+                var options = document.getElementById("ramadan-options");
+                // التبديل بين إظهار وإخفاء القائمة
+                if (options.style.display === "block") {
+                    options.style.display = "none";
+                } else {
+                    options.style.display = "block";
+                }
+            });
+    </script>
+    
+
+</body>
+</html>

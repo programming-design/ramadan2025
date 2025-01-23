@@ -70,7 +70,7 @@ feather.replace(); /* لتفعيل الأيقونات */
             background-color: #4a2c82;
             color: white;
             padding: 1rem;
-            font-size: 1.8rem;
+            
             font-weight: bold;
         }
         .content {
@@ -272,45 +272,168 @@ feather.replace(); /* لتفعيل الأيقونات */
                     font-size: 0.9rem;
                     margin-top: 2rem;
                 }
+
+                        /* إضافة قائمة منبثقة عند الضغط على القرآن الكريم */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #4a2c82;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            text-align: right;
+            border-radius: 5px;
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+
+
+     
+        /* محتويات الاختيارات الجديدة (مكتوب و مسموع) */
+        .quran-options-list {
+            display: none;
+            padding-right: 20px;
+        }
+
+        .quran-options-list a {
+            padding-left: 30px;
+
+            color: white;
+        }
+
+        .quran-options-list a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+
+        .ramadan-options-list {
+            display: none;
+            padding-right: 20px;
+        }
+
+        .ramadan-options-list a {
+            padding-left: 30px;
+
+            color: white;
+        }
+
+        .ramadan-options-list a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* استخدام media query لجعل القائمة أكثر توافقًا مع الهواتف */
+        @media (max-width: 768px) {
+            /* إخفاء القائمة العلوية في الشاشات الصغيرة */
+            .navbar .menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
     </style>
 </head>
 <body>                                                       <amp-auto-ads type="adsense"
         data-ad-client="ca-pub-5887199789142850">
 </amp-auto-ads>
 
- <!-- الشريط العلوي -->
-<div class="navbar">
-    <div class="brand">
-        <img  src="favicon.ico" alt="نور الإسلام" width="50" height="50" />
+     <!-- الشريط العلوي -->
+    <div class="navbar">
+        <div class="brand">
+            <img src="favicon.ico" alt="نور الإسلام" />
+        </div>
+        <!-- زر القائمة الجانبية على الهواتف -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div class="menu">
+            <a href="index.html">الرئيسية</a>
+            <a href="ahadit.html">الأحاديث</a>
+            <a href="tasbeeh_with_records.html">التسبيح الإلكتروني</a>
+            
+            <!-- قائمة منبثقة عند الضغط على القرآن الكريم -->
+            <div class="dropdown" id="quran-dropdown">
+                <a href="#" class="dropdown-btn">القرآن الكريم</a>
+                <div class="dropdown-content">
+                    <a href="written_quran.html">القرآن الكريم المكتوب</a>
+                    <a href="listening_quran.html">القرآن الكريم المسموع</a>
+                 <!----  <a href="quran_apps.html">تطبيقات القرآن</a>-->
+                    <!--  <a href="reciters.html">قراء القرآن</a>-->
+                </div>
+            </div>
+
+            <a href="Islamic wallpapers.html">خلفيات إسلامية</a>
+            
+                    <!-- قائمة منبثقة عند الضغط على  الرمضان -->
+                    <div class="dropdown" id="ramadan-dropdown">
+                        <a href="#" class="dropdown-btn">الرمضان</a>
+                        <div class="dropdown-content">
+                            <a href="soon ramadan.html">موعد الرمضان</a>
+                            <a href="404 - Copy.html">الفعاليات</a>
+                        </div>
+                    </div>
+            
+
+            <a href="contact-us.html">التواصل</a>
+        </div>
     </div>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
-    <div class="menu">
+
+
+
+
+
+    <!-- القائمة الجانبية الخاصة بالهواتف -->
+    <div class="side-menu" id="side-menu">
+        <button class="close-btn" id="close-menu">✖</button>
+        
         <a href="index.html">الرئيسية</a>
         <a href="ahadit.html">الأحاديث</a>
         <a href="tasbeeh_with_records.html">التسبيح الإلكتروني</a>
-        <a href="quran.html">القرآن الكريم</a>
+
+        <!-- اختيار القرآن الكريم الذي سيفتح اختيارات إضافية -->
+        <a href="#" id="quran-link" class="quran-option">القرآن الكريم</a>
+
+        <!-- اختيارات القرآن الكريم التي ستكون مخفية حتى الضغط على "القرآن الكريم" -->
+        <div class="quran-options-list" id="quran-options">
+            <a href="written_quran.html">القرآن الكريم المكتوب</a>
+            <a href="listening_quran.html">القرآن الكريم المسموع</a>
+          <!--  <!--  <a href="reciters.html">قراء القرآن</a>-->-->
+        </div>
+
         <a href="Islamic wallpapers.html">خلفيات إسلامية</a>
-    <a href="404.html">الرمضان</a>
-    <a href="404 - Copy">الفعاليات</a>
-        <!--  <a href="#contact">قصص الأنبياء</a>   -->
+
+                <!-- اختيار  الرمضان الذي سيفتح اختيارات إضافية -->
+                <a href="#" id="ramadan-link" class="ramadan-option"> الرمضان</a>
+ <!-- اختيارات   التي ستكون مخفية حتى الضغط على " الرمضان" -->
+        <div class="ramadan-options-list" id="ramadan-options">
+            <a href="soon ramadan.html"> موعد الرمضان</a>
+            <a href="404.html"> الفعاليات</a>
+        </div>
+      
         <a href="contact-us.html">التواصل</a>
     </div>
-</div>
-
-<!-- القائمة الجانبية -->
-<div class="side-menu" id="side-menu">
-    <button class="close-btn" id="close-menu">✖</button>
-    <a href="index.html">الرئيسية</a>
-    <a href="ahadit.html">الأحاديث</a>
-    <a href="tasbeeh_with_records.html"> التسبيح الإلكتروني</a>
-    <a href="quran.html">القرآن الكريم</a>
-    <a href="Islamic wallpapers.html"> خلفيات إسلامية</a>
-    <a href="404.html">الرمضان</a>
-    <a href="404 - Copy">الفعاليات</a>
-    <!--  <a href="#contact">قصص الأنبياء</a>   -->
-    <a href="contact-us.html">التواصل</a>
-</div>
-
+  
 
 
 
@@ -447,6 +570,66 @@ feather.replace(); /* لتفعيل الأيقونات */
         }
     });
 </script>
+
+
+    <!-- جافا سكريبت لفتح وإغلاق القائمة الجانبية ، وتفعيل المنبثق عند الضغط على القرآن الكريم -->
+    <script>
+       
+
+        // تفعيل وفتح/إغلاق القائمة المنبثقة عند الضغط على "القرآن الكريم"
+        document.getElementById("quran-dropdown").addEventListener("click", function(event) {
+            this.classList.toggle('active');
+            event.stopPropagation();  // لمنع إعادة تمرير الحدث إلى عناصر أخرى
+        });
+
+        // إغلاق القائمة المنبثقة إذا تم الضغط في أي مكان آخر في الصفحة
+        document.addEventListener("click", function(event) {
+            if (!event.target.closest('.dropdown')) {
+                document.getElementById("quran-dropdown").classList.remove('active');
+            }
+        });
+
+                // تفعيل وفتح/إغلاق القائمة المنبثقة عند الضغط على "القرآن الكريم"
+                document.getElementById("ramadan-dropdown").addEventListener("click", function(event) {
+                    this.classList.toggle('active');
+                    event.stopPropagation();  // لمنع إعادة تمرير الحدث إلى عناصر أخرى
+                });
+        
+                // إغلاق القائمة المنبثقة إذا تم الضغط في أي مكان آخر في الصفحة
+                document.addEventListener("click", function(event) {
+                    if (!event.target.closest('.dropdown')) {
+                        document.getElementById("ramadan-dropdown").classList.remove('active');
+                    }
+                });
+    </script>
+        <!-- جافا سكريبت لفتح وإغلاق القائمة الجانبية الخاصة بالهواتف -->
+    <script>
+       
+
+        // تفعيل/إخفاء خيارات القرآن الكريم عند الضغط على "القرآن الكريم"
+        document.getElementById("quran-link").addEventListener("click", function() {
+            var options = document.getElementById("quran-options");
+            // التبديل بين إظهار وإخفاء القائمة
+            if (options.style.display === "block") {
+                options.style.display = "none";
+            } else {
+                options.style.display = "block";
+            }
+        });
+
+
+             // تفعيل/إخفاء خيارات القرآن الكريم عند الضغط على " الرمضان"
+             document.getElementById("ramadan-link").addEventListener("click", function() {
+                var options = document.getElementById("ramadan-options");
+                // التبديل بين إظهار وإخفاء القائمة
+                if (options.style.display === "block") {
+                    options.style.display = "none";
+                } else {
+                    options.style.display = "block";
+                }
+            });
+    </script>
+    
 
 </body>
 </html>
